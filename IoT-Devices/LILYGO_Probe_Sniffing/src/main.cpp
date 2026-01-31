@@ -207,12 +207,12 @@ void sendList() {
 
   // Format and send AT+CIPSEND command for A7670E
 
-  String cmd = "AT+CIPSEND=0," + String(length) + ",\"138.91.62.132\",12345\r\n";
+  String cmd = "AT+CIPSEND=0," + String(length) + ",\"IP\",12345\r\n";
   Serial.println(cmd);
 
   SerialAT.print("AT+CIPSEND=0,");
   SerialAT.print(length);
-  SerialAT.print(",\"138.91.62.132\",12345\r\n");  // End with CRLF
+  SerialAT.print(",\"IP\",12345\r\n");  // End with CRLF
   delay(100);  // Wait for '>' prompt
 
   // Send the actual data
@@ -224,6 +224,7 @@ void emptyList() {
   memset(clientAddresses, 0, sizeof(clientAddresses));
   ClientCount = 0;
 }
+
 
 
 
